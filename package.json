@@ -1,0 +1,38 @@
+{
+  "name": "skitatry",
+  "version": "1.0.0",
+  "repository": "https://github.com/georgjr2/skitatry.git",
+  "author": "jmarticek <marticekjuraj@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node -r babel-register bin/start.js",
+    "eslint": "eslint .",
+    "knex": "knex"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "dotenv": "^6.0.0",
+    "knex": "^0.15.0",
+    "koa": "^2.5.1",
+    "koa-hbs": "^1.0.0",
+    "koa-joi-router": "^5.1.0",
+    "lodash": "^4.17.10",
+    "objection": "^1.1.10",
+    "pg": "^7.4.3",
+    "stream-buffers": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "chokidar": "^2.0.4",
+    "eslint": "4.19.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-lodash": "^2.7.0",
+    "pre-commit": "^1.2.2"
+  }
+}

@@ -1,0 +1,21 @@
+{{#> html title='Add application'}}
+<form method="post" enctype="multipart/form-data">
+    Osobné informácie
+    <hr>
+    <section>Akademický titul: <input type="text" name="title" require></section>
+    <section>Meno: <input type="text" name="name" require></section>
+    <section>Priezvisko: <input type="text" name="surname" require></section>
+    <section>E-mail: <input type="email" name="mail"></section>
+    <section>Telefón: <input type="text" name="phone"></section>
+    <br>
+    Sprievodný text
+    <hr>
+    <section><textarea name="text" rows="10" cols="100"> </textarea></section>
+    <br>
+    Prílohy
+    <hr>
+    <section>Životopis: <input type="file" name="cv"></section>
+    <br>
+    <button type="submit">Pridať</button>        
+  </form>
+{{/html}}

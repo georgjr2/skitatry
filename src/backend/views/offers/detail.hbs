@@ -1,0 +1,17 @@
+{{#> html title='Offer detail'}}
+    <h1>{{offer.title}}</h1>
+    {{offer.region.name}} {{offer.salary}}  {{offer.type}}
+    <br>
+    <br>
+    Popis
+    <hr>
+    {{offer.description}} <br>
+    <br>
+    <br>
+    Ďaľšie informácie
+    <hr>
+    {{offer.additionalInfo}} <br>
+    Kategória: {{offer.category.name}}<br>
+    Vytvorené: {{offer.createdAt}}<br>
+    Spoločnosť: {{offer.company.name}}<br>
+{{/html}}

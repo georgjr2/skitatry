@@ -1,0 +1,26 @@
+{{#> html title='All offers'}}
+<table border="1px" cellpadding="10px">
+  <tr align="center" style="font-weight: bold;">
+    <td>id</td>
+    <td>Title</td>
+    <td>Salary</td>
+    <td>Type</td>
+    <td>Category</td>
+    <td>Company</td>
+    <td>Region</td>
+    <td>Created at</td>
+    </tr>
+{{#each offers}}
+    <tr style="cursor:pointer;"onclick="window.location='/offers/{{this.id}}';">
+    <td>{{this.id}}</td>
+    <td>{{this.title}}</td>
+    <td>{{this.salary}}</td>
+    <td>{{this.type}}</td>
+    <td>{{this.category.name}}</td>
+    <td>{{this.company.name}}</td>
+    <td>{{this.region.name}}</td>
+    <td>{{this.createdAt}}</td>
+    </tr>
+{{/each}}
+</table>
+{{/html}}

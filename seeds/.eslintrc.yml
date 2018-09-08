@@ -1,0 +1,2 @@
+rules:
+  camelcase: [2, {properties: never}] # DB column names are in snake case
