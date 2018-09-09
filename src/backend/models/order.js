@@ -10,7 +10,7 @@ const mixins = compose(
 export default class Order extends mixins(BaseModel) {
   static tableName = 'order'
   static fields = [
-    'name', 'surname', 'address', 'idNumber', 'age', 'contactName', 'contactPhone', 'info',
-    'confirmed', 'from', 'to',
+    'name', 'surname', 'address', 'mail', 'phone', 'idNumber', 'birthDate', 'contactName', 'contactPhone', 'info',
+    'confirmed', 'paid', 'from', 'to',
   ]
 }

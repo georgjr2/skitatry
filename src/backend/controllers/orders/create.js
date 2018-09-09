@@ -5,26 +5,23 @@ import Order from '../../models/order'
 
 
 export const form = async (ctx) => {
-  await ctx.render('order/add')
+  await ctx.render('orders/add')
 }
 
 export const validate = {
-  type: 'multipart',
-  maxBody: '5mb',
+  type: 'form',
   params: Joi.object({
     orderId: Joi.number().required(),
   }),
-  parts: Joi.object({
-    field: Joi.object({
-      title: Joi.string().allow(''),
-      name: Joi.string().allow('').required(),
-      surname: Joi.string().allow('').required(),
-      mail: Joi.string().email().allow(''),
-      phone: Joi.string().allow(''),
-      text: Joi.string().allow(''),
-      cv: Joi.binary(),
-    }).or('mail', 'phone'),
-  }),
+  body: Joi.object({
+    title: Joi.string().allow(''),
+    name: Joi.string().allow('').required(),
+    surname: Joi.string().allow('').required(),
+    mail: Joi.string().email().allow(''),
+    phone: Joi.string().allow(''),
+    text: Joi.string().allow(''),
+    cv: Joi.binary(),
+  }).or('mail', 'phone'),
 }
 
 export const handler = async (ctx) => {

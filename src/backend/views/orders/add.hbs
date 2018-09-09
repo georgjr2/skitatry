@@ -1,0 +1,39 @@
+{{#> html title='Add order'}}
+<form method="post">
+  <div style="float:left; padding-right: 50px" class="horne">
+    Údaje účastníka
+   <hr width="250px" align="left">
+    <section>Meno: <input type="text" name="name" require></section>
+    <section>Priezvisko: <input type="text" name="surname" require></section>
+    <section>Adresa: <input type="text" name="address"></section>
+    <section>Číslo OP: <input type="text" name="id_number"></section>
+    <section>E-mail: <input type="email" name="mail"></section>
+    <section>Telefón: <input type="text" name="phone"></section>
+    <section>Dátum narodenia: <input type="date" name="birth_date"
+               value="2000-01-01"></section>
+    <br>
+  </div>
+  <div class="horne">
+    Údaje zákonného zástupcu
+     <hr width="20%" align="left">
+    <section >Meno a priezvisko: <input type="text" name="contact_name"></section>
+    <section>Telefón: <input type="text" name="contact_phone" ></section>
+    <section>Adresa: <input type="text" name="address"></section>
+    <br>
+    </div>
+ 
+  <div style="clear:both;">
+    Popis
+  <hr width="20%" align="left">
+    <section><textarea name="text" rows="10" cols="100"> </textarea></section>
+    <br>
+      Kurz
+  <hr width="20%" align="left">
+    <section>Od: <input type="date" name="from"></section>
+    <section>Do: <input type="date" name="to"></section>
+    <section>Potvrdený: <input type="checkbox" name="confirmed"></section>
+    <section>Zaplatený: <input type="checkbox" name="payed"></section>
+<br>
+    <button type="submit" style="border:0;margin:5px;font-weight:bold">Pridať</button>        
+  </form>
+{{/html}}
