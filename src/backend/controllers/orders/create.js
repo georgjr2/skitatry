@@ -1,18 +1,18 @@
 import {pick} from 'lodash'
 import {WritableStreamBuffer} from 'stream-buffers'
 import Joi from '../../utils/joi'
-import Application from '../../models/application'
+import Order from '../../models/order'
 
 
 export const form = async (ctx) => {
-  await ctx.render('applications/add')
+  await ctx.render('order/add')
 }
 
 export const validate = {
   type: 'multipart',
   maxBody: '5mb',
   params: Joi.object({
-    offerId: Joi.number().required(),
+    orderId: Joi.number().required(),
   }),
   parts: Joi.object({
     field: Joi.object({
@@ -40,10 +40,11 @@ export const handler = async (ctx) => {
       if (!part.lenght) part.pipe(myWritableStreamBuffer)
     }
   } catch (err) {
+  /* eslint-disable no-console */
     console.log(err)
   }
-  await Application.query().insert(
-    pick({...parts.field, cv: myWritableStreamBuffer, ...ctx.params}, Application.fields)
+  await Order.query().insert(
+    pick({...parts.field, cv: myWritableStreamBuffer, ...ctx.params}, Order.fields)
   )
-  ctx.redirect(`/offers/${ctx.params.offerId}`)
+  ctx.redirect(`/orders/${ctx.params.orderId}`)
 }

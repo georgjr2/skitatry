@@ -1,4 +1,4 @@
-{{#> html title='All offers'}}
+{{#> html title='All orders'}}
 <table border="1px" cellpadding="10px">
   <tr align="center" style="font-weight: bold;">
     <td>id</td>
@@ -10,8 +10,8 @@
     <td>Region</td>
     <td>Created at</td>
     </tr>
-{{#each offers}}
-    <tr style="cursor:pointer;"onclick="window.location='/offers/{{this.id}}';">
+{{#each orders}}
+    <tr style="cursor:pointer;"onclick="window.location='/orders/{{this.id}}';">
     <td>{{this.id}}</td>
     <td>{{this.title}}</td>
     <td>{{this.salary}}</td>

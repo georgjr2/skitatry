@@ -1,11 +1,11 @@
-import Offer from '../../models/offer'
+import Order from '../../models/order'
 
 
 export const handler = async (ctx) => {
-  const offers = await Offer
+  const orders = await Order
     .query()
     .whereNotDeleted()
     .eager('[region, category, company, applications]')
 
-  ctx.render('offers/list', {offers})
+  ctx.render('orders/list', {orders})
 }

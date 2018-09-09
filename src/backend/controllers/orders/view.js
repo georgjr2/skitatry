@@ -1,21 +1,21 @@
 import Joi from '../../utils/joi'
-import Offer from '../../models/offer'
+import Order from '../../models/order'
 
 
 export const validate = {
   params: Joi.object({
-    offerId: Joi.number().required(),
+    orderId: Joi.number().required(),
   }),
 }
 
 export const handler = async (ctx) => {
-  const {offerId} = ctx.params
-  const offer = await Offer
+  const {orderId} = ctx.params
+  const order = await Order
     .query()
     .whereNotDeleted()
-    .findById(offerId)
+    .findById(orderId)
     .eager('[region, category, company, applications]')
     .first()
 
-  ctx.render('offers/detail', {offer})
+  ctx.render('orders/detail', {order})
 }
