@@ -2,6 +2,7 @@ import Router from 'koa-joi-router'
 import * as routes from '../../constants/routes'
 import {route} from './utils/koa'
 import ordersController from './controllers/orders'
+import calendarController from './controllers/calendar'
 
 
 const router = new Router()
@@ -12,4 +13,5 @@ router.route([
   route('get', routes.API_ORDER_CREATE, ordersController.create.show),
   route('get', routes.API_ORDER_LIST, ordersController.create.show),
   route('get', routes.API_ORDER_VIEW, ordersController.create.show),
+  //route('get', routes.API_CALENDAR, calendarController.show),
 ])

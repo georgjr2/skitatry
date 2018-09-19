@@ -1,0 +1,16 @@
+{
+    "short_name": "Skitatry",
+    "name": "Skitatry registrovanie",
+    "icons": [
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#4286f4",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#4286f4"
+  }

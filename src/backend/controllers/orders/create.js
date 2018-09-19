@@ -1,11 +1,28 @@
 import {pick} from 'lodash'
 import {WritableStreamBuffer} from 'stream-buffers'
+import $ from 'jquery'
 import Joi from '../../utils/joi'
 import Order from '../../models/order'
 
 
 export const form = async (ctx) => {
-  await ctx.render('orders/add')
+  const events = [
+    {
+      title: 'janko',
+      start: '2018-09-10',
+      end: '2018-09-18',
+      // Rendering: 'background',
+      color: 'red',
+    },
+    {
+      title: 'marienka',
+      start: '2018-09-15',
+      end: '2018-09-21',
+      // Rendering: 'background',
+    },
+  ]
+  await ctx.render('calendar', {events})
+  // Await ctx.render('orders/add')
 }
 
 export const validate = {
