@@ -8,7 +8,7 @@ export const up = async (knex) => {
     table.string('address').notNullable().defaultTo('')
     table.string('mail')
     table.string('id_number')
-    table.integer('birth_date')
+    table.integer('age')
     table.string('contact_name').notNullable().defaultTo('')
     table.string('contact_phone').notNullable().defaultTo('')
     table.string('phone')

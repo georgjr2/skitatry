@@ -6,22 +6,7 @@ import Order from '../../models/order'
 
 
 export const form = async (ctx) => {
-  const events = [
-    {
-      title: 'janko',
-      start: '2018-09-10',
-      end: '2018-09-18',
-      // Rendering: 'background',
-      color: 'red',
-    },
-    {
-      title: 'marienka',
-      start: '2018-09-15',
-      end: '2018-09-21',
-      // Rendering: 'background',
-    },
-  ]
-  await ctx.render('calendar', {events})
+  await ctx.render('calendar')
   // Await ctx.render('orders/add')
 }
 
