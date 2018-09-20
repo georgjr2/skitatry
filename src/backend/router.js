@@ -9,9 +9,9 @@ const router = new Router()
 export default router
 
 router.route([
+  route('get', '/', calendarController.show),
   route('post', routes.API_ORDER_CREATE, ordersController.create),
   route('get', routes.API_ORDER_CREATE, ordersController.create.show),
   route('get', routes.API_ORDER_LIST, ordersController.create.show),
   route('get', routes.API_ORDER_VIEW, ordersController.create.show),
-  //route('get', routes.API_CALENDAR, calendarController.show),
 ])

@@ -6,8 +6,7 @@ import Order from '../../models/order'
 
 
 export const form = async (ctx) => {
-  await ctx.render('calendar')
-  // Await ctx.render('orders/add')
+  await ctx.render('orders/add')
 }
 
 export const validate = {
