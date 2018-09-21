@@ -9,9 +9,7 @@
     "eslint": "eslint .",
     "knex": "knex"
   },
-  "pre-commit": [
-    "eslint"
-  ],
+
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",

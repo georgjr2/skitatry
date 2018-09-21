@@ -15,8 +15,8 @@ export const up = async (knex) => {
     table.text('info')
     table.boolean('confirmed').defaultTo('false')
     table.boolean('paid').defaultTo('false')
-    table.timestamp('from')
-    table.timestamp('to')
+    table.date('from')
+    table.date('to')
   })
 }
 
