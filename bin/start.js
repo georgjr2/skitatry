@@ -1,11 +1,7 @@
-import '../loadenv'
 import http from 'http'
-import path from 'path'
-import chokidar from 'chokidar'
-import {keys, some, isString} from 'lodash'
-import app from '../src/backend'
+import {isString} from 'lodash'
 import config from '../config'
-
+import app from '../src/backend'
 
 /**
  * Get host and port from environment.
@@ -16,8 +12,7 @@ const {host, port} = config.server
  * Create HTTP server.
  */
 
-let currentApp = app.callback()
-const server = http.createServer(currentApp)
+const server = http.createServer(app.callback())
 
 
 /**
@@ -67,34 +62,3 @@ server.on('listening', () => {
   console.log(`Listening on ${bind}`)
 })
 
-
-/**
- * Live-reload
- */
-
-const BASE_DIR = path.normalize(path.join(__dirname, '..'))
-const COMMON_DIR = path.join(BASE_DIR, 'src', 'common')
-const BACKEND_DIR = path.join(BASE_DIR, 'src', 'backend')
-const LIB_DIR = path.join(BASE_DIR, 'src', 'lib')
-const CONSTANTS_DIR = path.join(BASE_DIR, 'constants')
-const watchedPaths = [COMMON_DIR, BACKEND_DIR, LIB_DIR, CONSTANTS_DIR]
-
-if (config.devel) {
-  const watcher = chokidar.watch(watchedPaths)
-  watcher.on('ready', () => {
-    watcher.on('all', () => {
-    // eslint-disable-next-line no-console
-      console.log('hot replacing server...')
-      // eslint-disable-next-line global-require
-      keys(require.cache).forEach((key) => {
-        if (some(watchedPaths, (path) => key.startsWith(path))) {
-          delete require.cache[key]
-        }
-      })
-      const app = require('../src/backend').default.callback()
-      server.removeListener('request', currentApp)
-      server.on('request', app)
-      currentApp = app
-    })
-  })
-}
