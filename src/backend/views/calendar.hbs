@@ -1,27 +1,13 @@
 
 {{#> html title='Calendar'}}
+<h1><a href="/order">Objednávka</a></h1>
+<hr>
 <script>
-
   $(() => {
-    const calendar = $('#calendar').fullCalendar({
-      events: [
-    {
-      title: 'majko',
-      start: '2018-09-10',
-      end: '2018-09-18',
-      // Rendering: 'background',
-      color: 'red',
-    },
-    {
-      title: 'majko2',
-      start: '2018-09-15',
-      end: '2018-09-21',
-      // Rendering: 'background',
-    },
-  ]
-  })
+    const calendar = $('#calendar').fullCalendar({{{calendarAttr}}})
   })
 </script>
+
 <div id='calendar'></div>
 
 {{/html}}
