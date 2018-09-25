@@ -25,7 +25,7 @@ export const handler = async (ctx) => {
       right: 'agendaWeek month prev,next',
       center: 'custom1',
     },
-    selectable: true,
+    selectable: false,
     firstDay: 1,
     allDayDefault: true,
     timeFormat: 'H:mm',
