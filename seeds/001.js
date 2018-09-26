@@ -4,7 +4,7 @@ const orders = [
     surname: 'hrasko',
     address: 'sadova 12',
     id_number: 'EU875421',
-    age: 11,
+    birth_date: '2000-01-01',
     contact_name: 'pani hraskova',
     phone: '0969696969',
   },

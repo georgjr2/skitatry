@@ -1,3 +1,5 @@
+import {pickBy, identity} from 'lodash'
+import moment from 'moment'
 import Order from '../../models/order'
 
 
@@ -6,20 +8,19 @@ export const handler = async (ctx) => {
     .query()
     .whereNotDeleted()
 
-
-  const events = orders.map((order) => ({
+  const events = orders.map((order) => pickBy({
     title: `${order.name} ${order.surname}`,
     start: order.from,
     end: order.to,
     name: order.name,
     surname: order.surname,
     mail: order.mail,
-    age: order.age,
+    age: moment().diff(moment(order.birthDate), 'years'),
     phone: order.phone,
     confirmed: order.confirmed,
     paid: order.paid,
-  }))
-
+    info: order.info,
+  }, identity))
   const calendarAttr = JSON.stringify({
     header: {
       right: 'agendaWeek month prev,next',
