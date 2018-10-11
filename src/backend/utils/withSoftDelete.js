@@ -1,3 +1,6 @@
+import moment from 'moment'
+
+
 export const withSoftDelete = (incomingOptions) => {
   const options = {
     columnName: 'deleted_at',
@@ -8,7 +11,7 @@ export const withSoftDelete = (incomingOptions) => {
     class SDQueryBuilder extends Model.QueryBuilder {
       delete() {
         this.mergeContext({softDelete: true})
-        return this.patch({[options.columnName]: Model.fn.now()})
+        return this.patch({[options.columnName]: moment().toISOString()})
       }
 
       hardDelete() {

@@ -38,6 +38,8 @@ window.onclick = function(event) {
  <b>Zaplatené:</b> ${calEvent.paid} 
   <br> <br>
   <b> Info: </b> ${calEvent.info}
+<br>
+<a href="/calendar/delete/${calEvent.id}"><button> Vymazať </button>
  `)
  $('.header').html(`${calEvent.name} ${calEvent.surname}`)
     $('#myModal').css('display', 'block')

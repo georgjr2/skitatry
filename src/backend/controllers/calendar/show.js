@@ -20,6 +20,7 @@ export const handler = async (ctx) => {
     confirmed: order.confirmed,
     paid: order.paid,
     info: order.info,
+    id: order.id,
   }, identity))
   const calendarAttr = JSON.stringify({
     header: {
