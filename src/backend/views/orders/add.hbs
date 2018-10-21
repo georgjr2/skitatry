@@ -6,25 +6,28 @@
   <div style="float:left; padding-right: 50px" class="horne">
     Údaje účastníka
    <hr width="250px" align="left">
-    <section>Meno: <input type="text" name="name" require></section>
-    <section>Priezvisko: <input type="text" name="surname" require></section>
-    <section>Adresa: <input type="text" name="address"></section>
+    <section>Meno: <input type="text" name="name" autocomplete="section-1 given-name" require></section>
+    <section>Priezvisko: <input type="text" name="surname" autocomplete="section-1 family-name" require></section>
+    <section>Adresa: <input type="text" name="address" autocomplete="section-1 street-address"></section>
     <section>Číslo OP: <input type="text" name="idNumber"></section>
-    <section>E-mail: <input type="email" name="mail"></section>
-    <section>Telefón: <input type="text" name="phone"></section>
-    <section>Dátum narodenia: <input type="date" name="birthDate" value="2000-01-01"></section>
+    <section>E-mail: <input type="email" name="mail" autocomplete="section-1 email"></section>
+    <section>Telefón: <input type="tel" name="phone" autocomplete="section-1 tel"></section>
+    <section>Dátum narodenia: <input type="date" name="birthDate" value="2000-01-01" autocomplete="section-1 bday"></section>
     <br>
   </div>
   <div class="horne">
     Údaje zákonného zástupcu
      <hr width="20%" align="left">
-    <section >Meno a priezvisko: <input type="text" name="contactName"></section>
-    <section>Telefón: <input type="text" name="contactPhone" ></section>
-    <section>Adresa: <input type="text" name="address"></section>
+    <section >Meno a priezvisko: <input type="text" name="contactName" autocomplete="section-2 name"></section>
+    <section>Telefón: <input type="tel" name="contactPhone" autocomplete="section-2 tel"></section>
+    <section>Adresa: <input type="text" name="address" autocomplete="section-2 street-address"></section>
     <br>
     </div>
- 
+ Farba
+  <hr width="20%" align="left">
+  <section><input type="color" name="color" style="width:150px;height:50px;border:0;padding:0"></section>
   <div style="clear:both;">
+    
     Popis
   <hr width="20%" align="left">
     <section><textarea name="info" rows="10" cols="100"> </textarea></section>

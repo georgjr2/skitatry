@@ -11,6 +11,7 @@ export const up = async (knex) => {
     table.date('birth_date')
     table.string('contact_name').notNullable().defaultTo('')
     table.string('contact_phone').notNullable().defaultTo('')
+    table.string('color').defaultTo('')
     table.string('phone').defaultTo('')
     table.text('info').defaultTo('')
     table.boolean('confirmed').defaultTo('false')

@@ -31,13 +31,15 @@ window.onclick = function(event) {
   const calendarAttr = {{{calendarAttr}}}
   $(() => {
     const calendar = $('#calendar').fullCalendar({...calendarAttr, eventClick: (calEvent, jsEvent, view) => {
-    
+$('.modal-header').css('background-color', calEvent.color)
  $('.modal-body').html(`<br><br>
  <b>Email:</b> ${calEvent.mail} <br> <b>Vek:</b> ${calEvent.age} <br> <b>Tel. číslo:</b> ${calEvent.phone} <br>
  <br> <b>Potvrdené:</b> ${calEvent.confirmed} <br>
  <b>Zaplatené:</b> ${calEvent.paid} 
   <br> <br>
   <b> Info: </b> ${calEvent.info}
+<br>
+<br>
 <br>
 <a href="/calendar/delete/${calEvent.id}"><button> Vymazať </button>
  `)

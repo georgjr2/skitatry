@@ -7,7 +7,6 @@ export const handler = async (ctx) => {
   const orders = await Order
     .query()
     .whereNotDeleted()
-
   const events = orders.map((order) => pickBy({
     title: `${order.name} ${order.surname}`,
     start: order.from,
@@ -15,6 +14,7 @@ export const handler = async (ctx) => {
     name: order.name,
     surname: order.surname,
     mail: order.mail,
+    color: order.color,
     age: moment().diff(moment(order.birthDate), 'years'),
     phone: order.phone,
     confirmed: order.confirmed,
