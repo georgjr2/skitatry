@@ -18,6 +18,8 @@ export const up = async (knex) => {
     table.boolean('paid').defaultTo('false')
     table.date('from')
     table.date('to')
+    table.time('from_time')
+    table.time('to_time')
   })
 }
 

@@ -76,11 +76,18 @@
 }
 
 /* Remove the header border from Schedule */
-.fc td, .fc th {
-    border-style: none !important;
-    border-width: 1px !important;
-    padding: 0 !important;
-    vertical-align: top !important;
+.fc-day {
+    border-style: solid!important;
+    border-width: 1px!important;
+    padding: 0!important;
+    vertical-align: top!important;
+}
+
+.fc-day-header {
+    border-style: solid!important;
+    border-width: 1px!important;
+    padding: 0!important;
+    vertical-align: top!important;
 }
 
 /* Inherits background for each event from Schedule. */
@@ -164,4 +171,14 @@
 /* Not raised button */
 .fc-state-default {
     box-shadow: None;
+}
+
+.fc-sun, .fc-sat { 
+    color:#832020;  
+    border-color: black;  
+    background-color: #f2fce3; 
+}
+
+.fc-ltr .fc-axis {
+    padding-right: 10px!important;
 }
